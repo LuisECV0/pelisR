@@ -1,3 +1,17 @@
+import { get } from "../data/httpClient"
+import { useParams } from "react-router-dom"
+import { UseEffect, useEffect, useState} from "react"
+
+
 export function MovieDetails(){
-    return( <h1>texto</h1>  )
+    const {movieId} = useParams
+    const [movie, setMovie] = useState(null);
+    useEffect(()=>{
+        get("/movie/"+ movieId).then((data)=>{
+            setMovie(data)
+        })
+     }, [movieId])
+    return(
+    <h1>texto1</h1> 
+    )
 }
