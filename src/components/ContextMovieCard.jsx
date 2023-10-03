@@ -10,15 +10,16 @@ export function ContextMovieCard(){
     useEffect(()=>{
         get("/discover/movie").then((data)=>{
             setMovies(data.results);
-            console.log(data)
-        })
+            console.log(data.results)
+        });
     },[]);
     return( 
         <ul className="container">
            
             {movies.map((movie)=>(
-                <MovieCard key={movie.id} movie={movie}/>
+                <MovieCard key={movie.id} 
+                movie={movie}/>
             ))}
         </ul>
-    )
+    );
 }
