@@ -12,6 +12,8 @@ export function MovieDetails(){
         })
      }, [movieId])
     return(
-    <h1>texto1</h1> 
+        <div>
+            <p>hola</p>
+        </div>
     )
 }
